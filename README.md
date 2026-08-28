@@ -24,7 +24,6 @@ Mais voici comment installer ce CTF manuellement :
 
 > cd fcsc2026-forensics-forenzeek-1
 
-> docker compose -f docker-compose-default.yml up
 
 -----------
 
