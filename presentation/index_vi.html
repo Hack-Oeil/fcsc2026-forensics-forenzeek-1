@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head lang="vi">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Các CTF của Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Kiểm tra xem cửa sổ có nằm trong iframe không
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Kích hoạt tô sáng cú pháp:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js chưa được tải!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Thử thách #618</h3>
+                            <h2 class="section-title">Forenzeek - Xâm nhập ban đầu</h2>
+                            <p>
+Nhật ký mạng từ <a href="https://docs.zeek.org/en/master/scripts/base/protocols/conn/main.zeek.html#type-Conn::Info">công cụ Zeek</a> đã được thu thập trên một mạng có phát hiện kẻ tấn công. Chỉ một phần các trường trong nhật ký của Zeek là có sẵn.
+<br /><br />
+Một vụ xâm nhập đã được ghi nhận trên máy có địa chỉ IP 192.168.1.42. Vụ xâm nhập này được thực hiện thông qua một email độc hại chứa tải trọng (payload) khá lớn. Bạn có thể tìm thấy uid của kết nối liên quan đến việc tải email này không? (vd: 1ac41a8ff0fd305679)
+<br /><br />
+Flag có định dạng <code>FCSC{uid}</code> (vd: <code>FCSC{1ac41a8ff0fd305679}</code>)
+                            </p>
+                            <h4>Tệp cần nghiên cứu:</h4>
+                            <p>../files/forenzeek.csv.gz</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Liên kết chính thức:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/forensics/fcsc2026-forensics-forenzeek-1/">https://hackropole.fr/fr/challenges/forensics/fcsc2026-forensics-forenzeek-1/</a>
+                                <br />
+                                Tác giả: mln
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Học tập</h3>
+                            <h2 class="section-title">Tài liệu và Video</h2>
+                            <p class="section-subtitle">
+                                Hiện chưa có tài liệu nào
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Trợ giúp</h3>
+                            <h2 class="section-title">Lời khuyên và gợi ý</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Chủ
+                                    đề trên Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Cuộn lên đầu trang" title="Cuộn lên đầu trang"></a>
+    </div>
+</body>
+
+</html>

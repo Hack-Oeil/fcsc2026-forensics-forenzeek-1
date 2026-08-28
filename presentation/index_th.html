@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head lang="th">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF ของ Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ตรวจสอบว่าหน้าต่างอยู่ใน iframe หรือไม่
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // เปิดใช้งานการเน้นไวยากรณ์:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js ไม่ได้ถูกโหลด!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>โจทย์ #618</h3>
+                            <h2 class="section-title">Forenzeek - การบุกรุกเบื้องต้น</h2>
+                            <p>
+บันทึกเครือข่ายจาก <a href="https://docs.zeek.org/en/master/scripts/base/protocols/conn/main.zeek.html#type-Conn::Info">เครื่องมือ Zeek</a> ถูกรวบรวมจากเครือข่ายที่ตรวจพบผู้โจมตี โดยมีเพียงบางฟิลด์ของบันทึก Zeek เท่านั้นที่พร้อมใช้งาน
+<br /><br />
+ตรวจพบการบุกรุกบนเครื่องที่มีที่อยู่ IP 192.168.1.42 การบุกรุกนี้เกิดขึ้นผ่านอีเมลอันตรายที่มีเพย์โหลดขนาดค่อนข้างใหญ่ คุณสามารถค้นหา uid ของการเชื่อมต่อที่เกี่ยวข้องกับการดาวน์โหลดอีเมลนี้ได้หรือไม่? (ตัวอย่าง: 1ac41a8ff0fd305679)
+<br /><br />
+รูปแบบของ Flag คือ <code>FCSC{uid}</code> (ตัวอย่าง: <code>FCSC{1ac41a8ff0fd305679}</code>)
+                            </p>
+                            <h4>ไฟล์ที่ต้องศึกษา:</h4>
+                            <p>../files/forenzeek.csv.gz</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                ลิงก์ทางการ:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/forensics/fcsc2026-forensics-forenzeek-1/">https://hackropole.fr/fr/challenges/forensics/fcsc2026-forensics-forenzeek-1/</a>
+                                <br />
+                                ผู้เขียน: mln
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>การเรียนรู้</h3>
+                            <h2 class="section-title">เอกสารและวิดีโอ</h2>
+                            <p class="section-subtitle">
+                                ยังไม่มีเอกสารในขณะนี้
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ความช่วยเหลือ</h3>
+                            <h2 class="section-title">คำแนะนำและคำใบ้</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">กระทู้บน
+                                    Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="เลื่อนขึ้นด้านบน" title="เลื่อนขึ้นด้านบน"></a>
+    </div>
+</body>
+
+</html>
