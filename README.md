@@ -1,4 +1,4 @@
-# FCSC 2025 Forenzeek - Compromission initiale
+# FCSC 2026 Forenzeek - Compromission initiale
 
 Des logs réseau issues de [l’outil Zeek](https://docs.zeek.org/en/master/scripts/base/protocols/conn/main.zeek.html#type-Conn::Info) ont été collectés sur un réseau dans lequel un attaquant a été repéré. Seule une partie des champs des logs de Zeek sont diponibles.
 
